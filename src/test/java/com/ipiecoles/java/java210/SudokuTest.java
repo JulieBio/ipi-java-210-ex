@@ -303,7 +303,7 @@ public class SudokuTest {
 		monSudoku.ecrireSudoku(tab);
 		
 		Assertions.assertThat(outContent.toString().trim()).isEqualToNormalizingNewlines(
-				" -----------------------\n" + 
+				"-----------------------\n" + 
 				"|   8   | 4   2 |   6   |\n" + 
 				"|   3 4 |       | 9 1   |\n" + 
 				"| 9 6   |       |   8 4 |\n" + 
@@ -315,7 +315,7 @@ public class SudokuTest {
 				"| 8 4   |       |   7 5 |\n" + 
 				"|   2 6 |       | 1 3   |\n" + 
 				"|   9   | 7   1 |   4   |\n" + 
-				" -----------------------\n");
+				" -----------------------");
 		
 	}
 
@@ -370,7 +370,7 @@ public class SudokuTest {
 	    Assertions.assertThat(monSudoku.resoudre(0, 0, tab)).isTrue();
 	    monSudoku.ecrireSudoku(tab);
 		Assertions.assertThat(outContent.toString().trim()).isEqualToNormalizingNewlines(
-				" -----------------------\n" + 
+				"-----------------------\n" + 
 				"| 1 8 7 | 4 9 2 | 5 6 3 |\n" + 
 				"| 5 3 4 | 6 7 8 | 9 1 2 |\n" + 
 				"| 9 6 2 | 1 3 5 | 7 8 4 |\n" + 
@@ -382,7 +382,7 @@ public class SudokuTest {
 				"| 8 4 1 | 9 6 3 | 2 7 5 |\n" + 
 				"| 7 2 6 | 5 8 4 | 1 3 9 |\n" + 
 				"| 3 9 5 | 7 2 1 | 8 4 6 |\n" + 
-				" -----------------------\n");
+				" -----------------------");
 		
 	}
 
@@ -402,7 +402,7 @@ public class SudokuTest {
 	    System.setOut(new PrintStream(outContent));
 	    resultat = Sudoku.ligneSaisieEstCoherente(valeur);
 		Assertions.assertThat(resultat).as("La vérification de la valeur " + valeur + " devrait renvoyer : " + ok).isEqualTo(ok);
-		Assertions.assertThat(outContent.toString().trim()).as("Le message affiché devrait être : " + message).isEqualToNormalizingNewlines(message);
+		Assertions.assertThat(outContent.toString()).as("Le message affiché devrait être : " + message).isEqualToNormalizingNewlines(message);
 	}
 	
 	private void invokeSetter(Object obj, String variableName, Object variableValue){
